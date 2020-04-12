@@ -22,8 +22,14 @@ Note: db.sqlite3 ships with the git. To access the admin pages- user: admin, pas
 
 ## Unit Tests
 The idea of testing modules and atomic entities independently.
+Running unit tests:
+
+>python manage.py test handlemoney
 ### URL tests
+- Refer tests/test_urls.py
 ### View tests
+- Refer tests/test_views.py
+### Form tests
 ### Model tests
 
 ## Integration Tests
