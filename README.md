@@ -12,17 +12,29 @@ First we will develop a simple web application that deals with funding for start
 ## Installations
 * Install Python 3.7.x if needed
 > mkdir learn_django_test
+
 > cd learn_django_test
+
 > git clone https://github.com/vatsamail/TestWebApp.git
+
 > virtualenv --no-site-packages [--python=<path to python 3.x>] env
+
 > source env/bin/activate.csh #linux
+
 > env\Scrips\activate #windows
+
 > cd TestWebApp
+
 > pip install -r requirements.txt
+
 > cd startupmoney
+
 > python manage.py makemigrations
+
 > python manage.py migrate
+
 > python manage.py runserver
+
 > python manage.py test
 
 Note: db.sqlite3 ships with the git. To access the admin pages- user: admin, password: superuser
