@@ -37,7 +37,7 @@ First we will develop a simple web application that deals with funding for start
 
 > python manage.py test
 
-Note: db.sqlite3 ships with the git. To access the admin pages- user: admin, password: superuser
+Note: db.sqlite3 ships with the git. To access the admin pages- _user: admin, password: superuser_
 
 ## Links:
 - http://127.0.0.1:8000/
@@ -52,19 +52,28 @@ Running unit tests:
 
 >python manage.py test handlemoney
 ### URL tests
-- Refer tests/test_urls.py
+- Refer handlemoney/tests/test_urls.py
 ### View tests
-- Refer tests/test_views.py
+- Refer handlemoney/tests/test_views.py
 ### Form tests
-- Refer tests/test_forms.py
+- Refer handlemoney/tests/test_forms.py
 ### Model tests
-- Refer tests/test_models.py
+- Refer handlemoney/tests/test_models.py
+
 ## Integration Tests
 
 ## Functional Tests
+- make chrome browser as the default browser
+- install chromedriver. The version of the chrome can be found in the "About" section in the settings. Download the driver accordingly.
+- copy the chromedriver.exe to functional_tests/ folder. For linux, use appropriate binary.
+- Refer functional_tests/test_project_list_page.py
 
+>python manage.py test functional_tests
+
+##### To run all the tests, simply execute _python manage.py test_
 ## References
 * https://pypi.org/project/robotframework-djangolibrary
 * https://github.com/TheDumbfounds/budget-application-tutorial
 * https://docs.djangoproject.com/en/2.1/topics/testing
 * https://django-testing-docs.readthedocs.io/en/latest/basic_doctests.html
+* https://selenium-python.readthedocs.io/getting-started.html
