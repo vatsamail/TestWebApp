@@ -56,12 +56,18 @@ class TestViews(TestCase):
             amount    = 1000,
             category  = test_cat,
         )
+        test_exp2 = Expense.objects.create(
+            project   = self.test_project,
+            title     = 'Second Expense',
+            amount    = 2000,
+            category  = test_cat,
+        )
 
         response = self.cli.delete(self.detail_url, json.dumps({
-            'id': test_exp.id,
+            'id': 2,
         }))
         self.assertEquals(response.status_code, 204)
-        self.assertEquals(self.test_project.expenses.count(), 0)
+        self.assertEquals(self.test_project.expenses.count(), 1)
 
     def test_project_detail_DELETE_delete_no_id(self):
         test_cat = Category.objects.create(project=self.test_project, name='Development',)
@@ -86,11 +92,12 @@ class TestViews(TestCase):
         )
         second_project = Project.objects.get(id=2)
         self.assertEquals(second_project.name, "Second Project")
+        self.assertEquals(self.test_project.name, "test_project")
 
         first_category = Category.objects.get(id=1)
         self.assertEquals(first_category.project, second_project)
         self.assertEquals(first_category.name, "Design")
-        
+
         third_category = Category.objects.get(id=3)
         self.assertEquals(third_category.project, second_project)
         self.assertEquals(third_category.name, "MVP")
