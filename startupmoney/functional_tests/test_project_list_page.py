@@ -11,6 +11,7 @@ class TestProjectListPage(StaticLiveServerTestCase):
     SHORT  = 5
     MEDIUM = 10
     LONG   = 20
+    EVER   = 60
 
     def setUp(self):
         # before every function
