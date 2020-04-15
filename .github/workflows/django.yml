@@ -29,5 +29,5 @@ jobs:
     - name: Run Tests
       run: |
         cd startupmoney
-        geckodriver --version
+        google-chrome --version
         python manage.py test
