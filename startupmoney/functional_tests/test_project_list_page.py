@@ -36,11 +36,12 @@ class TestProjectListPage(StaticLiveServerTestCase):
         # testing
         self.assertEquals(0, 0)
 
+
     def test_no_projects_alert_is_displayed(self):
         self.browser.get(self.live_server_url)
 
         # take some time to see it visually
-        # time.sleep(self.SHORT)
+
 
         # The user requests the page for the first time
         """
@@ -53,7 +54,7 @@ class TestProjectListPage(StaticLiveServerTestCase):
             alert.find_element_by_tag_name('h3').text,
             "Sorry, you don't have any projects, yet."
         )
-        # time.sleep(self.SHORT)
+
 
     def test_no_projects_alert_button_redirects_to_add_page(self):
         self.browser.get(self.live_server_url)
@@ -66,7 +67,7 @@ class TestProjectListPage(StaticLiveServerTestCase):
             self.browser.current_url,
             add_url
         )
-        # time.sleep(self.SHORT)
+
 
     def test_user_sees_project_list(self):
         prj = Project.objects.create(name='test', budget=1000,)
@@ -78,6 +79,7 @@ class TestProjectListPage(StaticLiveServerTestCase):
             self.browser.find_element_by_tag_name('h5').text,
             "test"
         )
+        # time.sleep(self.SHORT)
 
     def test_user_click_visit_button(self):
         prj = Project.objects.create(name='Test Project', budget=1000,)
