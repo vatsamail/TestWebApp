@@ -19,7 +19,7 @@ class TestProjectListPage(StaticLiveServerTestCase):
             self.browser = webdriver.Chrome(os.path.join('functional_tests', 'chromedriver.exe'))
         else:
             # for non-windows (aka Ubuntu-Linux) use headless gecko
-            self.browser = webdriver.Firefox()
+            self.browser = webdriver.Chrome()
 
     def tearDown(self):
         # after every function
