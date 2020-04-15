@@ -2,6 +2,7 @@ from selenium import webdriver
 from handlemoney.models import Project
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
+from selenium.webdriver.chrome.options import Options
 import os
 import time
 
@@ -14,12 +15,17 @@ class TestProjectListPage(StaticLiveServerTestCase):
     def setUp(self):
         # before every function
 
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+
         if os.name == 'nt':
             # for windows Chrome
-            self.browser = webdriver.Chrome(os.path.join('functional_tests', 'chromedriver.exe'))
+            self.browser = webdriver.Chrome(os.path.join('functional_tests', 'chromedriver.exe'), chrome_options=chrome_options)
         else:
             # for non-windows (aka Ubuntu-Linux) use headless gecko
-            self.browser = webdriver.Chrome()
+            self.browser = webdriver.Chrome(chrome_options=chrome_options)
 
     def tearDown(self):
         # after every function
