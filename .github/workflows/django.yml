@@ -31,4 +31,5 @@ jobs:
         cd startupmoney
         google-chrome --version
         chromedriver --version
-        python manage.py test
+        python manage.py test functional_tests
+        python manage.py test handlemoney
