@@ -77,3 +77,6 @@ Running unit tests:
 * https://docs.djangoproject.com/en/2.1/topics/testing
 * https://django-testing-docs.readthedocs.io/en/latest/basic_doctests.html
 * https://selenium-python.readthedocs.io/getting-started.html
+
+## CI Status
+![Django CI](https://github.com/vatsamail/TestWebApp/workflows/Django%20CI/badge.svg?branch=master)
