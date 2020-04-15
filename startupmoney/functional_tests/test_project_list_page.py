@@ -13,7 +13,13 @@ class TestProjectListPage(StaticLiveServerTestCase):
 
     def setUp(self):
         # before every function
-        self.browser = webdriver.Chrome(os.path.join('functional_tests', 'chromedriver.exe'))
+
+        if os.name == 'nt':
+            # for windows Chrome
+            self.browser = webdriver.Chrome(os.path.join('functional_tests', 'chromedriver.exe'))
+        else:
+            # for non-windows (aka Ubuntu-Linux) use headless gecko
+            self.browser = webdriver.Firefox()
 
     def tearDown(self):
         # after every function
