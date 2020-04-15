@@ -34,7 +34,7 @@ class TestProjectListPage(StaticLiveServerTestCase):
 
     def test_hello_world(self):
         # testing
-        self.assertEquals(0, 0)
+        self.assertEquals(0, 1)
 
 
     def test_no_projects_alert_is_displayed(self):
