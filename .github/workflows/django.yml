@@ -29,8 +29,8 @@ jobs:
         tar -xvzf geckodriver*
         chmod +x geckodriver
         export PATH=$PATH:$PWD
-        
+
     - name: Run Tests
       run: |
         cd startupmoney
-        python manage.py test handlemoney
+        python manage.py test
